@@ -75,7 +75,7 @@
   
          main()
     
-#### python的二分排序(耗时为n*log2 n)
+#### python的插入排序(耗时为n*log2 n)
 
     #coding=utf-8
     
@@ -114,10 +114,6 @@
         insert_sort(alist)
         
         print(insert_sort(alist))
-        
-        # for li in alist[6::-1]:
-        
-        #     print(li)
 
     if __name__ == '__main__':
     
