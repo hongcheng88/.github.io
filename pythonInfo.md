@@ -26,7 +26,53 @@
   
       ...
       
-  > **注意：python中的\*\*args和\*\*kwargs一定要保持严格的先后顺序，否则会导致解析报错,args为数组，kwargs为字典，统计个数均可以直接用len(args/kwargs)**
+  > **注意：python中的\*\*args和\*\*kwargs一定要保持严格的先后顺序，否则会导致解析报错,args为数组，kwargs为字典，统计参数个数均可以直接用len(args/kwargs)**
 
-
+#### python的二分查找(耗时为log2n)
+    import os，sys
+  
+    def binarySearch(my_list,num):
+  
+        low = 0
+      
+        hight = len(my_list)-1
+      
+        i = 1
+      
+        while low < hight:
+      
+            mid = (int)(low + hight)//2
+          
+            print("the %s time,my guess is %s"%(i, my_list[mid]))
+          
+            if my_list[mid] < num:
+          
+                low = mid
+              
+            elif mylist[mid] > num:
+          
+                hight = mid
+              
+            else:
+          
+                print("got it...")
+              
+            i=i+1
+          
+        return None
+      
+      
+    def main():
+  
+        my_list=[1,2,3,5,7,9,14,18,21]
+      
+        num = 14
+      
+        binarySearch(my_list,num)
+  
+  
+    if __name__ == "__main__":
+  
+         main()
+    
   
