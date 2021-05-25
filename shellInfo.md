@@ -3,14 +3,17 @@
 #### 字串处理
 
   > str=nihaobuhaoa
-  
+  > 
   > %从右往左截取输出第一个指定字符之前的字段    ${str%a*}  输出 nihaobuhao ;
+  > 
   > %%从右往左截取输出最后一个指定字符之前的字段    ${str%%a*}  输出 nih ；
+  > 
   > #从左往右截取输出第一个指定字符之后的字段    ${str#*a}  输出 aobuhaoa ；
+  > 
   > ##从左往右截取输出最后指定字符之后的字段    ${str##*a}  输出 aoa
-  
+  >  
   > echo $str|cut -c 2-5  截取输出字串的第二位到第五位 输出 ihao
-  
+  > 
   > echo $str|tr -d 'a' 删除字串中的a字符 输出nihobuho ; echo $str|tr 'a' 'b' 字串b替代字串a，输出nihbohuhbob
   
 #### 文件处理
