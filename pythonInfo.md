@@ -118,5 +118,12 @@
     if __name__ == '__main__':
     
         main()
-  
+
+#### python的全局锁GIL
+
+> GIL是实现Python解析器(CPython)时所引入的一个概念，一般并不能让python使用者直接调用。GIL功能大体相当于让多线程的任务也只能单线程去执行。
+>
+> GIL的存在导致多线程无法很好的实现多核CPU的并发处理能力。即Python的多线程在多核CPU上，只对于IO密集型计算产生正面效果；而当有至少有一个CPU密集型线程存在，那么多线程效率会由于GIL而大幅下降。
+> 
+> 解决方法，一是用multiprocessing替代Thread，一定程度能解决问题；二是换解析器，如JPython和IronPython
   
