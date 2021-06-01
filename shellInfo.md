@@ -149,7 +149,9 @@
   > 
   > **进程的实现是调用fork系统调用：pid_t fork(void);**
   > 
-  > **线程的实现是调用clone系统调用** ：int clone(int (*fn)(void *), void *child_stack, int flags, void *arg, ...
+  > **线程的实现是调用clone系统调用** ：
+  > 
+    int clone(int (*fn)(void *), void *child_stack, int flags, void *arg, ...
   
     /* pid_t *ptid, struct user_desc *tls, pid_t *ctid */
     
