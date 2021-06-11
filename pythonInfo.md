@@ -249,3 +249,19 @@ true/false为变量，可赋值改变 | true/false为关键字，不再可变
         if normal condition
     finally:
         Do it anyway
+
+#### 解析xml文件
+
+> **1.SAX标准库解析**
+> 
+>> SAX 用事件驱动模型，通过在解析XML的过程中触发一个个的事件并调用用户定义的回调函数来处理XML文件。 
+
+> **2.DOM （Document Object Model）解析**
+> 
+>> 将 XML 数据在内存中解析成一个树，通过对树的操作来操作XML
+> 
+> **ElementTree 解析**
+> 
+>> ElementTree就像一个轻量级的DOM，具有方便友好的API。代码可用性好，速度快，消耗内存少。
+> 
+> 另：因DOM需要将XML数据映射到内存中的树，一是比较慢，二是比较耗内存，而SAX流式读取XML文件，比较快，占用内存少，但需要用户实现回调函数（handler）
