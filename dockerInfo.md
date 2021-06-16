@@ -52,3 +52,11 @@
 > 
 > docker **system prune**，可以清理当前无效的docker容器及镜像
 > 
+> docker images，列出当前所有的镜像
+> 
+> docker **commit** -m="has update" -a="runoob" e218edb10161 runoob/ubuntu:v2，将容器e218e推到仓库runoob/ubuntu，tag名为v2
+> 
+> docker build -t runoob/centos:6.7 Dockerfile，将dockerfile打成镜像
+> 
+> docker tag 860c279d2fec runoob/centos:dev，用860c的镜像打标签dev
+
