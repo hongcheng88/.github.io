@@ -27,3 +27,28 @@
 | 单机运行密度	| 上千个容器	| 几十个容器
 | 隔离性	| 安全隔离	| 完全隔离
 | 迁移性 | 	好	| 一般
+
+#### 常用指令
+
+> docker pull xxx，载入远程镜像到本地
+> 
+> docker run myubuntu /bin/bash启动镜像为myubuntu的容器，执行指令为/bin/bash
+> 
+> 可以增加 **-ti**，交互式操作终端，i(交互式操作stdin)，t（terminal终端）。即当前直接进入容器中，可以接受输入输出
+> 
+> 可以增加 **-d**，让容器在后台运行
+> 
+> 需要进入后台运行的容器，使用**exec或者attach**。前者为推荐使用，进入退出不影响容器运行，后者退出会导致容器的stop。推荐同步搭配 -ti（docker exec -ti 容器id /bin/bash）
+> 
+> docker ps 查看当前容器运行情况（包含容器id，对应镜像，启动时执行的命令，创建时间，状态，端口信息，启动时的名字）
+> 
+> docker stop/start 容器id可以停止启动容器
+> 
+> docker  **export** 1e560fca3906 > ubuntu.tar，可以将容器导出快照到本地
+> 
+> cat docker/ubuntu.tar | docker **import** - test/ubuntu:v1，可以将快照文件 ubuntu.tar 导入到镜像 test/ubuntu:v1
+> 
+> docker **rm** 容器id，可以删除容器
+> 
+> docker **system prune**，可以清理当前无效的docker容器及镜像
+> 
