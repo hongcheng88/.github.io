@@ -3,8 +3,16 @@
 #### 容器间通信方式
 
 >  **IP访问**
->>   
+>> 
 >> 容器创建时通过 --network 指定相应的网络，或者通过 docker network connect 将现有容器加入到指定网络，保证容器在同一个网络段即可直接通过ip进行访问
+>> 
+>>> 1.docker network create -d bridge test-net，创建网络;
+>>> 
+>>> 2.运行容器test1并连接到新建网络docker run -itd --name test1 --network test-net ubuntu /bin/bash
+>>> 
+>>> 3.运行容器test2并连接到新建网络docker run -itd --name test2 --network test-net ubuntu /bin/bash
+>>> 
+>>> 4.之后则可进入容器进行test1和2做ping的测试验证
 >  
 >  **Docker DNS Server**
 > > 
@@ -67,6 +75,7 @@
 > docker run -d **-p 127.0.0.1:5000:5000** test/webapp python3 hello.py，容器运行flask应用，指定容器绑定的网络地址127.0.0.1，固定映射容器5000端口到主机5000端口
 > 
 > 以上默认绑定tcp端口，如需绑定udp，则可以用-p port1:port2/udp
+
 
 #### Dockerfile
 
