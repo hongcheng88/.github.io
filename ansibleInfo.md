@@ -155,6 +155,8 @@
   >> 
   >> Playbook与ad-hoc相比,是一种完全不同的运用ansible的方式，类似与saltstack的state状态文件。ad-hoc无法持久使用，playbook可以持久使用。playbook是由一个或多个play组成的列表， play的主要功能在于将事先归并为一组的主机装扮成事先通过ansible中的task定义好的角色。从根本上来讲，所谓的task无非是调用ansible的一个module。将多个play组织在一个playbook中，即可以让它们联合起来按事先编排的机制完成某一任务。是用yaml语法进行编排的。
   >> 
+  >> 执行playbook可以通过-e传入全局变量，如 ansible-playbook -e "pkg=httpd" variables.yml，其中在variables.yaml中用{{ pkg }}，就可以使用此变量
+  >> 
   >> 如下为一个简单的yaml
   >> 
     - hosts: web
