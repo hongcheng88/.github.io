@@ -127,17 +127,21 @@
 > 
 > 解决方法，一是用multiprocessing替代Thread，一定程度能解决问题；二是换解析器，如JPython和IronPython
 >> 多线程实现一：
+>> '''python
     from mutilprocessing import pool 
     ps = Pool(24)
     ps.apply_async(func, args=(xxx,xxx,...))
     ps.close()
     ps.join()
+    '''
 
 >> 多线程实现二：
+>> '''python
     from mutilprocessing import Process 
     ps = Process(target=func, args=(xxx,xxx,...))
     ps.start()
     ps.close()
+    '''
   
 #### python的is 和 == 的区别
 
