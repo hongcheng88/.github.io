@@ -8,11 +8,11 @@
   
       def printLog(func):
   
-          def wrapper(**args, **kwargs):
+          def wrapper(*args, **kwargs):
       
               print("正在执行的函数是:%s"%func.__name__) #打印信息
           
-              f = func(**args, **kwargs) #执行函数
+              f = func(*args, **kwargs) #执行函数
           
               return f
           
